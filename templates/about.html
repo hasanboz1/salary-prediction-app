@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--Main container-->
+<div class="container px-4 px-md-5">
+
+<!--Project intro-->
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold">About This Project</h1>
+    <p class="lead text-muted">
+      Salary Predictor is a machine learning-powered web application developed as part of a final year BSc Data Science and Computing project.
+      It helps users estimate their expected salaries based on real world data and simple user inputs.
+    </p>
+  </div>
+
+
+<!--Project pupose-->
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+          <h4 class="card-title">🎯 Project Purpose</h4>
+          <p class="card-text">
+            The aim of this project is to demonstrate the practical use of supervised learning models for salary prediction. 
+            It allows users to explore how variables such as age, education, experience, and gender influence salary outcomes using a clear, interactive interface.
+          </p>
+        </div>
+      </div>
+<!--Developer info -->
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+          <h4 class="card-title">👨‍💻 Developer Info</h4>
+          <p class="card-text">
+            My name is Hasan Bozkurt, a final year BSc student in Data Science and Computing at Birkbeck College London.
+            This web app is my final year individual project, designed to combine machine learning, data analysis, and UI/UX principles in one unified product.
+          </p>
+        </div>
+      </div>
+<!--Tools and Techs-->
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h4 class="card-title">🧠 Tools & Technologies Used</h4>
+          <ul>
+            <li>Python — Flask, NumPy, Pandas, Scikit-learn</li>
+            <li>Frontend — HTML, Bootstrap 5, Jinja Templates</li>
+            <li>Models — Decision Tree and Random Forest</li>
+            <li>Deployment-ready structure and modular design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

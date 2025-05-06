@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!--Page title and the description-->
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Choose Your Plan</h1>
+    <p class="lead text-muted">Simple pricing for everyone. Pick the plan that suits your goals.</p>
+</div>
+
+<!--Pricing cards-->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col">
+    <div class="card h-100 border-primary text-center shadow">
+      <div class="card-header bg-primary text-white">
+        <h4 class="my-0">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">£0 <small class="text-muted">/year</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>✔ 3 salary predictions</li>
+          <li>✔ Basic support</li>
+          <li>✔ Access to latest model</li>
+        </ul>
+        <button class="btn btn-outline-primary">Start Free</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 border-success text-center shadow">
+      <div class="card-header bg-success text-white">
+        <h4 class="my-0">Pro</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">£9 <small class="text-muted">/year</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>✔ 7 predictions per year</li>
+          <li>✔ Email support</li>
+          <li>✔ Priority processing</li>
+        </ul>
+        <button class="btn btn-success">Get Pro</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 border-dark text-center shadow">
+      <div class="card-header bg-dark text-white">
+        <h4 class="my-0">Unlimited</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">£19 <small class="text-muted">/year</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>✔ Unlimited predictions</li>
+          <li>✔ Chat + email support</li>
+          <li>✔ Lifetime access to upgrades</li>
+        </ul>
+        <button class="btn btn-dark">Go Unlimited</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

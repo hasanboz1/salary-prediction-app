@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--Container for homepage content-->
+<div class="container px-4 px-md-5"> 
+<!--Header-->
+  <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Salary Prediction App</h1>
+      <p class="lead text-muted">Estimate your salary using machine learning models trained on real-world data.</p>
+      <a href="/predict" class="btn btn-primary btn-lg mt-3">Get Started</a>
+  </div>
+<!--Info cards-->
+  <div class="row g-4 text-center">
+      <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+              <div class="card-body">
+                  <h5 class="card-title">🤖 Machine Learning</h5>
+                  <p class="card-text">Powered by Decision Tree and Random Forest models for accurate predictions.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">📂 Data-Driven Insights</h5>
+                <p class="card-text">Our predictions are based on real salary datasets to help you make informed decisions.</p>
+            </div>
+        </div>
+    </div>
+    
+      <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+              <div class="card-body">
+                  <h5 class="card-title">🧠 Easy to Use</h5>
+                  <p class="card-text">Just enter your age, education level, gender, and experience to predict salary.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <hr class="my-5">
+<!--Average salary table-->
+  <h2 class="text-center mb-4">🌍 Average Salaries by Country</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped align-middle shadow-sm text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Country</th>
+          <th>Average Salary</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>🇬🇧 United Kingdom</td><td>£38,000</td><td>Pound Sterling</td></tr>
+        <tr><td>🇺🇸 United States</td><td>$58,000</td><td>US Dollar</td></tr>
+        <tr><td>🇩🇪 Germany</td><td>€45,000</td><td>Euro</td></tr>
+        <tr><td>🇨🇦 Canada</td><td>$47,000</td><td>Canadian Dollar</td></tr>
+        <tr><td>🇮🇳 India</td><td>₹7,50,000</td><td>Indian Rupee</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="my-5">
+<!--Faqs -->
+  <h2 class="text-center mb-4"> Frequently Asked Questions ❓</h2>
+  <div class="accordion" id="faqAccordion">
+    {% for q, a in [
+      ("Why is salary prediction important?", "Salary prediction helps you set realistic expectations, negotiate better offers, and plan your career growth based on actual data."),
+      ("Why use this platform to predict your future salary?", "This platform uses trained machine learning models on real-world data, providing you with fast and reliable salary insights."),
+      ("What factors affect my salary?", "Key factors include your age, education level, gender, years of experience, and job title."),
+      ("Is my data stored or tracked?", "No — this app does not store or track any user data. All predictions happen securely in your browser.")
+    ] %}
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ loop.index }}">
+          {{ q }}
+        </button>
+      </h2>
+      <div id="faq{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">{{ a }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr class="my-5">
+<!--User reviews-->
+  <h2 class="text-center mb-4">🌟 What Our Users Say</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <p class="card-text fst-italic">"I used this app to check market trends before switching jobs. The predictions were surprisingly close to reality!"</p>
+          <h5 class="card-title mt-4">— Berk K.</h5>
+          <div class="text-warning">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <p class="card-text fst-italic">"Clean design, easy to use, and accurate forecasts. Highly recommend it to recent graduates like me."</p>
+          <h5 class="card-title mt-4">— Murat J.</h5>
+          <div class="text-warning">★★★★☆</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <p class="card-text fst-italic">"As a career coach, I recommend this platform to all my clients. It's fast, honest, and practical."</p>
+          <h5 class="card-title mt-4">— Ihsan W.</h5>
+          <div class="text-warning">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Feedback form-->
+  <section class="py-5 mt-5" style="background-color: #f9f6f1;">
+    <div class="text-center">
+      <h2 class="mb-3">📩 Share Your Thoughts</h2>
+      <p class="mb-4 text-muted">We’d love to hear your thoughts. Share your feedback or feature ideas below!</p>
+      <form class="row g-3 justify-content-center">
+        <div class="col-md-4">
+          <input type="email" class="form-control" placeholder="Your email address">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" placeholder="Your name (optional)">
+        </div>
+        <div class="col-md-8">
+          <textarea class="form-control" placeholder="Share your ideas or suggestions..." rows="3"></textarea>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary w-100">Submit Feedback</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div> 
+
+  <!--Footer-->
+  <footer class="py-4 text-muted bg-light mt-5 border-top">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-3">
+          <strong>SalaryPredictor</strong><br>
+          Helping you plan smarter careers with data-driven insights.
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>ABOUT</h6>
+          <ul class="list-unstyled">
+            <li><a href="/about" class="text-muted">About</a></li>
+            <li><a href="#faqAccordion" class="text-muted">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>SITE INFO</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-muted">Privacy Policy</a></li>
+            <li><a href="#" class="text-muted">Contact Us</a></li>
+            <li><a href="#" class="text-muted">Your Rights & Responsibilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center small mt-3">
+        © 2025 SalaryPredictor. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+
+{% endblock %}
